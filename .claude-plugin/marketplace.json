@@ -1,0 +1,27 @@
+{
+  "name": "syns-claude-plugins",
+  "description": "Claude Code plugins for the Syns multi-agent development platform.",
+  "version": "0.1.0",
+  "owner": {
+    "name": "Bartosz Sojka",
+    "email": "bartsoj@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "syns",
+      "source": "./plugins/syns",
+      "description": "Auto-pull on Claude session start and auto-push on every Stop.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Bartosz Sojka",
+        "email": "bartsoj@gmail.com"
+      },
+      "homepage": "https://syns.dev",
+      "repository": "https://github.com/synsdev/syns-claude-plugins",
+      "license": "MIT",
+      "keywords": ["syns", "version-control", "multi-agent", "automation", "hooks"],
+      "category": "version-control",
+      "tags": ["syns", "auto-commit", "session-hooks"]
+    }
+  ]
+}
