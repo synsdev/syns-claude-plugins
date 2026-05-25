@@ -1,6 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "syns",
+  "displayName": "Syns",
   "version": "0.1.0",
   "description": "Auto-pull on Claude session start and auto-push on every Stop, scoped to directories containing a .syns.yaml.",
   "author": {
@@ -16,14 +17,5 @@
     "multi-agent",
     "automation",
     "hooks"
-  ],
-  "userConfig": {
-    "push_message": {
-      "type": "string",
-      "title": "Commit message",
-      "description": "Commit message used by the Stop hook for auto-pushes.",
-      "default": "claude code session",
-      "required": false
-    }
-  }
+  ]
 }

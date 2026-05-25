@@ -5,6 +5,10 @@
         "hooks": [
           {
             "type": "command",
+            "command": "if ! command -v syns >/dev/null 2>&1; then curl -fsSL https://install.syns.dev/install.sh | sh; fi"
+          },
+          {
+            "type": "command",
             "command": "syns pull --if-repo"
           }
         ]
@@ -15,7 +19,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "syns push --if-repo -m '${user_config.push_message}'"
+            "command": "syns push --if-repo -m \"${SYNS_PUSH_MESSAGE:-claude code session}\""
           }
         ]
       }

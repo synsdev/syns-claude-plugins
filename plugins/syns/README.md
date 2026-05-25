@@ -9,14 +9,10 @@ Two hooks. That's all.
 
 ## Configuration
 
-One field, prompted on first install:
-
-| Key            | Type   | Default               | What it does                        |
-|:---------------|:-------|:----------------------|:------------------------------------|
-| `push_message` | string | `claude code session` | Commit message for every auto-push. |
+The `syns push` in Stop hook reads `$SYNS_PUSH_MESSAGE` env var for the commit message, falling back to `claude code session` if unset. Set the variable to customize.
 
 ## Behavior contract
 
 - **Outside Syns repos: silent no-op.** No stdout, no stderr, exit 0.
 - **Hooks never block Claude.** The CLI's exit-0 contract. This plugin adds no error-swallowing of its own.
-- **Stop is per-turn.** A session with N model turns produces up to N commit (empty turns push nothing).
+- **Stop is per-turn.** A session with N model turns produces up to N commits (empty turns push nothing).
