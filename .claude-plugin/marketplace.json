@@ -22,6 +22,22 @@
       "keywords": ["syns", "version-control", "multi-agent", "automation", "hooks"],
       "category": "version-control",
       "tags": ["syns", "auto-commit", "session-hooks"]
+    },
+    {
+      "name": "plan-sharing",
+      "source": "./plugins/plan-sharing",
+      "description": "Saves each approved plan into the current Syns repo's plans/ folder and warns when it overlaps another agent's plan in that repo.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Bartosz Sojka",
+        "email": "bartsoj@gmail.com"
+      },
+      "homepage": "https://syns.dev",
+      "repository": "https://github.com/synsdev/syns-claude-plugins",
+      "license": "MIT",
+      "keywords": ["syns", "multi-agent", "coordination", "plan", "hooks"],
+      "category": "version-control",
+      "tags": ["syns", "multi-agent", "plan-mode", "conflict-detection"]
     }
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "ExitPlanMode",
+        "hooks": [
+          {
+            "type": "command",
+            "timeout": 20,
+            "statusMessage": "Sharing plan and checking overlap…",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/coordinate-plan.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "plan-sharing",
+  "displayName": "Syns Plan Sharing",
+  "version": "0.1.0",
+  "description": "Shares each approved plan inside the current Syns repo and warns when it overlaps another agent's plan in that repo.",
+  "author": {
+    "name": "Bartosz Sojka",
+    "email": "bartsoj@gmail.com"
+  },
+  "homepage": "https://syns.dev",
+  "repository": "https://github.com/synsdev/syns-claude-plugins",
+  "license": "MIT",
+  "keywords": [
+    "syns",
+    "multi-agent",
+    "coordination",
+    "plan",
+    "hooks",
+    "conflict-detection"
+  ]
+}
