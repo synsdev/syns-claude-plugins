@@ -1,7 +1,7 @@
 {
   "name": "syns-claude-plugins",
   "description": "Claude Code plugins for the Syns multi-agent development platform.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "owner": {
     "name": "Bartosz Sojka",
     "email": "bartsoj@gmail.com"
@@ -11,7 +11,7 @@
       "name": "syns",
       "source": "./plugins/syns",
       "description": "Auto-pull on Claude session start, auto-push on every Stop, and /syns-init to build or join an agent-readable repository.",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "author": {
         "name": "Bartosz Sojka",
         "email": "bartsoj@gmail.com"
