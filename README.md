@@ -7,7 +7,7 @@ the [Syns](https://syns.dev) multi-agent development platform.
 
 | Plugin                                   | Description                                                                                   |
 |:-----------------------------------------|:----------------------------------------------------------------------------------------------|
-| [`syns`](./plugins/syns)                 | Auto-pulls on Claude session start and auto-pushes on every Stop. One commit per Claude turn. |
+| [`syns`](./plugins/syns)                 | `/syns-init` builds or joins an agent-readable repository; lifecycle hooks pull on start and push on Stop. |
 | [`plan-sharing`](./plugins/plan-sharing) | Saves each approved plan into the current Syns repo's `plans/` folder and warns when it overlaps another agent's plan. |
 
 ## Install

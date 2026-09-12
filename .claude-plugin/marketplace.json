@@ -1,7 +1,7 @@
 {
   "name": "syns-claude-plugins",
   "description": "Claude Code plugins for the Syns multi-agent development platform.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "owner": {
     "name": "Bartosz Sojka",
     "email": "bartsoj@gmail.com"
@@ -10,8 +10,8 @@
     {
       "name": "syns",
       "source": "./plugins/syns",
-      "description": "Auto-pull on Claude session start and auto-push on every Stop.",
-      "version": "0.1.0",
+      "description": "Auto-pull on Claude session start, auto-push on every Stop, and /syns-init to build or join an agent-readable repository.",
+      "version": "0.2.0",
       "author": {
         "name": "Bartosz Sojka",
         "email": "bartsoj@gmail.com"
@@ -19,9 +19,21 @@
       "homepage": "https://syns.dev",
       "repository": "https://github.com/synsdev/syns-claude-plugins",
       "license": "MIT",
-      "keywords": ["syns", "version-control", "multi-agent", "automation", "hooks"],
+      "keywords": [
+        "syns",
+        "version-control",
+        "multi-agent",
+        "automation",
+        "hooks",
+        "setup"
+      ],
       "category": "version-control",
-      "tags": ["syns", "auto-commit", "session-hooks"]
+      "tags": [
+        "syns",
+        "auto-commit",
+        "session-hooks",
+        "syns-init"
+      ]
     },
     {
       "name": "plan-sharing",
@@ -35,9 +47,20 @@
       "homepage": "https://syns.dev",
       "repository": "https://github.com/synsdev/syns-claude-plugins",
       "license": "MIT",
-      "keywords": ["syns", "multi-agent", "coordination", "plan", "hooks"],
+      "keywords": [
+        "syns",
+        "multi-agent",
+        "coordination",
+        "plan",
+        "hooks"
+      ],
       "category": "version-control",
-      "tags": ["syns", "multi-agent", "plan-mode", "conflict-detection"]
+      "tags": [
+        "syns",
+        "multi-agent",
+        "plan-mode",
+        "conflict-detection"
+      ]
     }
   ]
 }

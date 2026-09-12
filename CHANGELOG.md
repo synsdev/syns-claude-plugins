@@ -8,6 +8,8 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+- `/syns-init` in the `syns` plugin: mines an existing project, proposes a repository through a digest-bound local HTML review, stages and compares it with matched read-only tasks, and adopts or privately publishes only separately approved operations. An explicit `owner/name` joins an existing repository.
+- The skill's hosted and plugin distributions are generated from the same canonical source and carry verifiable package checksums.
 - `plan-sharing` plugin: coordinates agents at plan time. On `ExitPlanMode`, when inside a Syns repo, it saves the
   approved plan to that repo's own `plans/<slug>.md`. If other agents' plans exist in that folder, it injects them as
   `additionalContext` and asks the running agent to compare and stop & report on conflict (same files, duplicate work,

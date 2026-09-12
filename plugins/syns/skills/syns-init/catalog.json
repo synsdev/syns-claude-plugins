@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "references": [
+    {
+      "id": "ticks",
+      "repository": "bartsoj/ticks-engineering-work",
+      "commit": "000dfbef291d50cde86aa942697909352f3dfd05",
+      "mode": "shape-only",
+      "for": ["engineering work", "dependencies", "waiting", "review"]
+    },
+    {
+      "id": "linear",
+      "repository": "bartsoj/linear-engineering-work",
+      "commit": "e54bb495634698f6485a8e884277cf855552d070",
+      "mode": "shape-only",
+      "for": ["issues", "projects", "initiatives", "milestones", "cycles", "updates", "documents"]
+    },
+    {
+      "id": "notion",
+      "repository": "bartsoj/notion-workspace",
+      "commit": "b18f2ed4ebacabe5e5671113d75667a70f9e196e",
+      "mode": "shape-only",
+      "for": ["pages", "databases", "relations", "templates", "views"]
+    },
+    {
+      "id": "attio",
+      "repository": "bartsoj/attio-crm",
+      "commit": "e27bd7325d852bbb3d221db556052e8973176ed5",
+      "mode": "shape-only",
+      "for": ["companies", "people", "deals", "relationships", "lists", "entries"]
+    },
+    {
+      "id": "spec-kit",
+      "repository": "bartsoj/spec-kit-feature-specs",
+      "commit": "b3ffce8761fade4ac2cf6dca4e79ac0e8f29ed72",
+      "mode": "native-transport",
+      "for": ["constitution", "feature packets", "requirements", "plans", "tasks"]
+    },
+    {
+      "id": "openspec",
+      "repository": "bartsoj/openspec-codebase-specs",
+      "commit": "386589ffba465d721124fce1205043ac222b0227",
+      "mode": "native-transport",
+      "for": ["current capabilities", "proposed deltas", "change tasks", "archives"]
+    }
+  ]
+}
