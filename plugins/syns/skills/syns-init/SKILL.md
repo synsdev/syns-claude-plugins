@@ -1,7 +1,7 @@
 ---
 name: syns-init
 description: >
-  Sets up or joins a Syns repository containing the markdown a team's agents need before they work and update as they work. Use when asked to run syns-init, set up Syns for a codebase or team, turn existing memory/specs/tickets/skills/process docs into a structured agent-readable repository, compare a proposed wiki with the current files, or join an existing owner/name repository. Mines existing files first, asks only questions that change information ownership, proposes from six pinned reference shapes, renders local structure and evaluation review pages, stages and evaluates without touching the source, and adopts or publishes privately only after explicit approval.
+  Sets up, extends, or joins a Syns repository containing the markdown a team's agents need before they work and update as they work. Use when asked to run syns-init, set up Syns for a codebase or team, turn existing memory/specs/tickets/skills/process docs into a structured agent-readable repository, compare a proposed wiki with the current files, reuse or consolidate an existing Syns repository, or join an existing owner/name repository. Mines current code and Markdown, bounded Git history, and accessible Syns repositories before proposing; asks only questions that change information ownership; proposes from six pinned reference shapes or an existing repository; renders local structure and evaluation review pages; stages and evaluates without touching the source; and adopts, privately publishes, creates a team, or grants collaborator/team access only after explicit approval.
 ---
 
 # syns-init
@@ -37,6 +37,7 @@ A hosted invocation may initially fetch only this file. If `references/` and `sc
 ## Read as needed
 
 - BUILD source mining, question policy, manifests, structure review, and staging: [references/build.md](references/build.md)
+- Project/Git-history understanding and existing Syns repository reuse: [references/discovery-and-reuse.md](references/discovery-and-reuse.md)
 - Pinned examples and composition rules: [references/catalog.md](references/catalog.md) and [catalog.json](catalog.json)
 - Matched read-only evaluation, blind review, adoption: [references/evaluate.md](references/evaluate.md)
 - CLI, private push, harness boundaries, JOIN, second-person demo: [references/publish-and-join.md](references/publish-and-join.md)
@@ -85,7 +86,7 @@ Only add a marker-delimited adapter to a sibling code project when the user expl
 ## BUILD state machine
 
 ```text
-inventory → mine → select/compose → ask → propose → structure review
+inventory → mine current files/history/Syns repos → select/reuse/compose → ask → propose → structure review
   → approve evaluation → stage → validate → matched read-only runs
   → blind review/reveal → decision → approve exact adoption/publication
   → adopt locally → optional private push → receipt
@@ -99,11 +100,15 @@ Snapshot the current markdown/instruction package and record a digest before int
 
 Seal evaluation tasks and scoring criteria before materializing the proposal. Prepared fixture tasks are regression evidence, not independent causal proof; say so on the review page.
 
-### 2. Inventory and mine
+### 2. Inventory and understand the work
 
-Read [references/build.md](references/build.md).
+Read [references/build.md](references/build.md) and [references/discovery-and-reuse.md](references/discovery-and-reuse.md).
 
-Inventory all existing markdown, agent entry files, process/memory files, skills, specs, plans, tickets, decisions, native stores, symlinks, and identities. Then read bodies in a narrowing order: agent entry points → authoritative/referenced markdown → native config → source and tests needed to verify claims.
+Inventory all existing markdown, agent entry files, process/memory files, skills, specs, plans, tickets, decisions, native stores, symlinks, and identities. Inspect manifests, module roots, schemas, tests, and operational entry points to understand what the user is building. Then read bodies in a narrowing order: agent entry points → authoritative/referenced markdown → native config → source and tests needed to verify claims.
+
+Use bounded Git history to identify recurring areas, files that change together, historical decision language, contributors, and repository topology. Current files own current behavior; commit subjects are historical evidence, not automatically current truth. Do not infer current team membership or dispatcher count from authors.
+
+If `syns whoami --json` already succeeds, list all accessible repositories with paginated `syns repos --json`. Shortlist likely matches from metadata, then privately pull and inspect only the strongest candidates. Decide whether to join, extend, derive, link, propose consolidation, or ignore each relevant repository. Similar names never authorize a merge. If unauthenticated, record this discovery plane as unavailable and continue without starting login.
 
 For every existing document decide:
 
@@ -115,13 +120,15 @@ For every existing document decide:
 
 Every source-behavior claim needs `path:line` plus digest. Human intent points to the answer that established it. Label inference and unknowns.
 
-### 3. Select and compose
+### 3. Select, reuse, and compose
 
 Read [references/catalog.md](references/catalog.md).
 
+First decide whether an inspected Syns repository is already canonical or provides a closer structure than the public shelf. Prefer extending or linking an existing source of truth over inventing a second owner. Consolidation is a proposal—not an automatic merge—and requires an authority decision plus later move/reversal approval.
+
 Detect Spec Kit/OpenSpec before shape selection. Preserve an existing native store rather than translating it. If both are present and authority is unclear, spend one content question on which owns specification truth.
 
-For shape-only work, compare the evidence with all six compact descriptors. Adopt at most one branded base; add missing concerns through neutral modules. Record why each candidate was selected or rejected. An honest zero-match is valid.
+For shape-only work, compare the work model with all six compact descriptors and inspected Syns candidates. Adopt at most one branded base; add missing concerns through neutral modules. Record why every shelf and relevant Syns candidate was selected, reused, linked, consolidated, or rejected. An honest zero-match is valid.
 
 Do not describe the shelf as customer-proven. It is Syns-authored and internally checked.
 
@@ -137,7 +144,8 @@ Operational approvals, authentication, path choice, repository name, and publica
 
 Before materialization, create an exact proposal manifest containing:
 
-- selected reference/mode and pinned commit;
+- provisional description of what the team is building, with current-file and bounded-history evidence;
+- selected reference/mode and pinned commit, plus join/extend/derive/link/consolidate/ignore decisions for relevant accessible Syns repositories;
 - proposed paths in read order;
 - one question, owner, update trigger, readers, and origin per path;
 - evidence per established claim;
@@ -152,7 +160,7 @@ A proposal that adds approved intent, routing, or canonical skill content is a *
 
 ### 6. Render structure review and wait
 
-Use the bundled renderer/template to write `reviews/structure-review.html`; serve it on localhost and open it. The page is adapted from the Air wiki-structure tree template and must show the full tree, source lineage, old-to-proposed disposition, six candidate decisions, unknowns, validation, and evaluation plan.
+Use the bundled renderer/template to write `reviews/structure-review.html`; serve it on localhost and open it. The page is adapted from the Air wiki-structure tree template and must show the understood work model, current/history evidence, relevant accessible Syns repositories and reuse decisions, full tree, source lineage, old-to-proposed disposition, six shelf decisions, unknowns, validation, and evaluation plan.
 
 Its choices are:
 
@@ -191,7 +199,9 @@ If limited pilot is chosen, show separate unchecked approvals for:
 
 - local adoption;
 - project adapter;
-- private Syns publication.
+- private Syns publication;
+- direct collaborator access and role;
+- creating/selecting a team, inviting members, and granting that team repository access.
 
 Bind approval to the stage and exact operation manifest. Evaluation interpretation alone changes nothing.
 
@@ -203,13 +213,15 @@ A project adapter is separately approved, marker-delimited, and removable. Do no
 
 Verify the adopted tree. If validation fails, reverse local operations and preserve the stage/reports.
 
-### 11. Publish privately only when approved
+### 11. Publish privately and hand off only when approved
 
 Read [references/publish-and-join.md](references/publish-and-join.md).
 
 Authenticate now if necessary. Get the owner from `syns whoami`. Check the proposed name. Ensure `.syns.yaml` is absent, then first-push the exact accepted wiki with explicit private visibility. Verify status before adding/pushing provenance.
 
-If the push fails, keep the local wiki. Do not force, silently rename, or claim publication. Public visibility is a later user action.
+After the repository exists, offer an operational handoff block: finish without sharing; add named collaborators with `read`, `write`, or `admin`; or create/select a team, invite members, and grant the team repository access. Show exact people/emails, roles, team, and commands, and require explicit approval before mutating access. Do not claim the next person is ready until an existing user was added or an invitation was created. Return the exact `owner/name` sentence the next person gives their agent.
+
+If the push or access operation fails, keep the local wiki and report the partial state. Do not force, silently rename, or claim publication/invitation. Public visibility is a later user action.
 
 ### 12. Receipt
 
@@ -218,6 +230,8 @@ Report only:
 - current package decision;
 - adopted local path, if any;
 - private repository URL, if any;
+- collaborator/team grants and pending invitations actually created, if any;
+- a copyable next-person JOIN sentence using the exact `owner/name`;
 - files/read order;
 - evaluation result and limitations;
 - integration detected and the condition for a teammate to see updates: successful push followed by successful pull;

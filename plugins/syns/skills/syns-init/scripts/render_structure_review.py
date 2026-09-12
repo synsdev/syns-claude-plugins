@@ -21,6 +21,14 @@ def rows(items: list[dict[str, Any]], cells: list[tuple[str, str]]) -> str:
     return "".join(rendered) or f'<tr><td colspan="{len(cells)}"><em>None</em></td></tr>'
 
 
+def facts(value: Any) -> str:
+    if isinstance(value, dict):
+        return "".join(f'<article><strong>{esc(k)}</strong><p>{esc(v)}</p></article>' for k, v in value.items())
+    if isinstance(value, list):
+        return "".join(f'<article><p>{esc(v)}</p></article>' for v in value)
+    return f'<article><p>{esc(value)}</p></article>'
+
+
 def tree(items: list[dict[str, Any]]) -> str:
     rendered = []
     current_band = None
@@ -68,6 +76,9 @@ def render(data: dict[str, Any], template: str) -> str:
         "{{DISCLOSURE}}": esc(data.get("disclosure", "")),
         "{{DIGESTS}}": digest_html,
         "{{SOURCES}}": rows(data.get("sources", []), [("path", "Source"), ("kind", "Kind"), ("disposition", "Disposition")]),
+        "{{WORK_MODEL}}": facts(data.get("work_model", {"Status": "Not established"})),
+        "{{HISTORY}}": rows(data.get("history", []), [("evidence", "History evidence"), ("interpretation", "Interpretation"), ("limit", "Limit")]),
+        "{{SYNS_REPOSITORIES}}": rows(data.get("syns_repositories", []), [("repository", "Repository"), ("decision", "Decision"), ("reason", "Reason"), ("boundary", "Boundary")]),
         "{{CANDIDATES}}": candidates,
         "{{TREE}}": tree(data.get("tree", [])),
         "{{MAPPING}}": mapping,

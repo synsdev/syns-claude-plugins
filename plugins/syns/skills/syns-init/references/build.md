@@ -16,6 +16,7 @@ Use `${TMPDIR:-/tmp}/syns-init/<run-id>/` and set it to mode `0700`. Keep:
 run/
   source-snapshot/       immutable snapshot of the original markdown package
   evidence.json          claims and their sources
+  context-discovery.json bounded Git history and accessible Syns repository metadata
   proposal.json          exact proposed tree and mappings
   questions.json         questions asked and answers received
   evaluation.json        sealed tasks, rubric, limits, and thresholds
@@ -39,7 +40,9 @@ Inventory before interpretation:
 - native `openspec/`, `.specify/`, and `specs/NNN-*` roots;
 - code manifests, module roots, schemas, tests, and operational entry points;
 - symlinks and their resolved targets;
-- existing `.syns.yaml` identities and whether more than one is in scope.
+- existing `.syns.yaml` identities and whether more than one is in scope;
+- bounded Git history: current root/head, credential-redacted remotes, submodules, authors, recent commit subjects, and frequently changed paths;
+- already accessible Syns repositories, when `syns whoami --json` succeeds without starting authentication.
 
 For every existing markdown file record:
 
@@ -64,10 +67,13 @@ Read bodies after inventory, in narrowing passes:
 1. Agent entry files and their referenced read order.
 2. Existing markdown with high inbound references or obvious authority.
 3. Native configuration and schema files.
-4. Source lines needed to verify claims the wiki may state.
-5. Tests and issue/spec artifacts needed to distinguish behavior from intent.
+4. Manifests, module roots, schemas, code entry points, and tests that reveal what is being built.
+5. Bounded Git commits around relevant files to recover historical rationale and co-change patterns.
+6. Source lines needed to verify claims the wiki may state.
+7. Tests and issue/spec artifacts needed to distinguish behavior from intent.
+8. Privately pulled representative files from the strongest accessible Syns repository candidates.
 
-Every statement about source behavior carries `path:line`. Human-approved business intent cites the answer that established it. Historical files remain historical; do not silently promote them to current authority.
+Every statement about source behavior carries `path:line`. Human-approved business intent cites the answer that established it. Historical files and commit subjects remain historical; do not silently promote them to current authority. Repository metadata is a discovery clue, not proof that two repositories should be merged.
 
 ## Content questions
 
@@ -105,8 +111,10 @@ updates_when: "the business rule or payout model changes"
 
 The manifest also records:
 
+- provisional work model and its current/history evidence;
 - selected reference and pinned commit, or honest zero-match;
 - reason each reference was selected/rejected;
+- relevant accessible Syns repositories and their join/extend/derive/link/consolidate/ignore decisions;
 - complete old → proposed mapping;
 - omitted material and why;
 - canonical owners of each fact;
@@ -125,7 +133,9 @@ The page shows, conclusion first:
 - what approval permits: **local staging and read-only comparison only**;
 - old snapshot and proposal digests;
 - detected sources and exclusions;
-- all six candidates with selection/rejection reasons;
+- what the agent understands the user/team is building, with bounded Git-history evidence and limits;
+- all relevant accessible Syns repositories considered and whether to join, extend, derive, link, consolidate, or ignore;
+- all six shelf candidates with selection/rejection reasons;
 - proposed tree, one question per file, and source lineage;
 - every old file's disposition;
 - unknowns and omissions;

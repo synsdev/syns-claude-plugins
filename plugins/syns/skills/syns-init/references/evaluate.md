@@ -96,7 +96,7 @@ The page has three states in one file:
 
 1. **Blind review** — task prompt, Answer A/B, aliased citations and evidence, rubric controls, A/B/tie/unscorable, confidence, leakage flag, comments. Hide condition names, paths, timing, automatic grades, and aggregates.
 2. **Reveal** — identify conditions; show human and deterministic grades, disagreements, task/category results, critical errors, timing coverage, exclusions, protocol deviations, model/harness, and digests.
-3. **Decision** — `limited pilot`, `revise and rerun`, `retain current`, or `inconclusive`. If limited pilot is selected, show separate unchecked controls for local adoption, project adapter, and private publication.
+3. **Decision** — `limited pilot`, `revise and rerun`, `retain current`, or `inconclusive`. If limited pilot is selected, show separate unchecked controls for local adoption, project adapter, private publication, direct collaborators, and team creation/invites/repository access. Access controls name exact targets and roles and run only after successful private publication.
 
 A comparison decision never authorizes filesystem or remote changes. Adoption requires a separate approval record matching the stage and operation digests. Blank approves nothing.
 

@@ -145,7 +145,7 @@
   .decision-options span { display: block; margin-top: 3px; color: var(--muted); font: 400 10px/1.3 Georgia, serif; }
   .adoption-controls { margin-top: 17px; padding: 14px; border: 1px solid #b9ac8d; background: var(--sheet); }
   .adoption-controls > p { margin-bottom: 11px; color: var(--muted); font-size: 12px; }
-  .approval-checks { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--rule); }
+  .approval-checks { display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid var(--rule); }
   .approval-checks label { display: flex; gap: 9px; align-items: flex-start; min-height: 84px; padding: 12px; border-right: 1px solid var(--rule); cursor: pointer; font: 800 10px/1.35 ui-monospace, monospace; }
   .approval-checks label:last-child { border-right: 0; }
   .approval-checks label:has(input:checked) { background: var(--green-wash); box-shadow: inset 0 0 0 2px var(--green); }
@@ -309,6 +309,8 @@
               <label><input type="checkbox" name="approve_local_adoption" value="approved"><span><b>Local adoption</b><span>Place the accepted wiki in the exact local destination declared above; preserve current files unless the manifest explicitly says otherwise.</span></span></label>
               <label><input type="checkbox" name="approve_project_adapter" value="approved"><span><b>Project adapter</b><span>Apply only the marker-delimited, removable project instruction edit shown in the operation manifest.</span></span></label>
               <label><input type="checkbox" name="approve_private_publication" value="approved"><span><b>Private publication</b><span>Create or push only the named private Syns repository after authentication and exact local validation.</span></span></label>
+              <label><input type="checkbox" name="approve_direct_collaborators" value="approved"><span><b>Direct collaborators</b><span>Add only the named users/emails with the exact read, write, or admin roles shown in the operation manifest.</span></span></label>
+              <label><input type="checkbox" name="approve_team_handoff" value="approved"><span><b>Team handoff</b><span>Create/select only the named team, invite the listed emails, and grant the exact repository role shown above. Invitations may remain pending.</span></span></label>
             </div>
           </fieldset>
 

@@ -39,6 +39,46 @@ A failed first push can still occupy a repository name in the current product. R
 
 Public visibility is a later, explicit operation and is not offered during setup.
 
+## Team and collaborator handoff
+
+After—and only after—the accepted repository exists and `syns status` verifies it, offer to finish the handoff in the same run. This is an operational decision, not a content question.
+
+Options:
+
+1. Finish with no access change.
+2. Add one or more existing Syns users directly:
+
+   ```bash
+   syns collaborators add <username-or-email> --role read|write|admin
+   ```
+
+3. Create or use a team, invite people, and grant repository access:
+
+   ```bash
+   syns teams create <team-name> --description "<description>"
+   syns teams invite <team-name> <email> --role member|admin
+   syns teams add-repo <team-name> <owner/name> --role read|write|admin
+   ```
+
+Inspect current teams and collaborators before proposing commands so the skill does not duplicate an existing team, grant, or pending invitation. A direct collaborator target can be a username or email. A team invitation takes an email and may remain pending until the recipient accepts.
+
+The approval page must list:
+
+- exact repository identity;
+- direct collaborator target and access role;
+- existing or proposed team identity;
+- invitee emails and member/admin roles;
+- team-to-repository access role;
+- whether each operation adds an existing user immediately or creates a pending invitation.
+
+None is checked by default. Access grants happen only after explicit approval. Execute sequentially, capture JSON receipts where supported, re-list collaborators/team membership/repository grants, and report partial success exactly. Never weaken repository visibility, create a public repository, or silently upgrade a role as part of handoff.
+
+End with a copyable sentence for the next person:
+
+> Run syns-init and join `<owner>/<name>` in an empty directory. Use the repository's declared read order; do not redesign it.
+
+The next person's JOIN still follows the route below. A pending team invite must be accepted before private pull can succeed.
+
 ## What setup does not configure
 
 Do not ask whether to pull or push. Do not install lifecycle hooks. Automatic lifecycle transport belongs to the user's installed harness integration:
@@ -65,7 +105,8 @@ For an explicit repository:
 4. Refuse a non-empty destination. Never merge a remote wiki into unrelated local markdown.
 5. Verify `.syns.yaml`, file count/digests where known, `STRUCTURE.md`, and the declared read order.
 6. Print the local path, repository identity, first files to read, and integration status.
-7. Stop. Do not redesign an existing team wiki during JOIN.
+7. Report whether access came from ownership, direct collaboration, or a team when that information is available.
+8. Stop. Do not redesign an existing team wiki during JOIN.
 
 If the user explicitly asks to wire a sibling code project, show the exact marker-delimited `AGENTS.md`/`CLAUDE.md` adapter and obtain approval before writing it.
 

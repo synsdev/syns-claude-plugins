@@ -472,9 +472,40 @@
       </div>
     </section>
 
+    <section class="review-section" aria-labelledby="understanding-title">
+      <header class="section-head">
+        <p class="section-number">02 / understanding</p>
+        <h2 id="understanding-title">What this team appears to be building</h2>
+        <p>A provisional work model derived from current files, bounded Git history, and repository topology. History explains context; checked-out files own current behavior.</p>
+      </header>
+      <div class="risk-list">{{WORK_MODEL}}</div>
+      <p class="scroll-label" id="history-scroll-label" style="margin-top:18px"><span>Bounded history evidence and interpretation limits</span><span>Scroll table →</span></p>
+      <div class="scroll-region" role="region" aria-labelledby="history-scroll-label" tabindex="0">
+        <table>
+          <thead><tr><th>History evidence</th><th>Interpretation</th><th>Limit</th></tr></thead>
+          <tbody>{{HISTORY}}</tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="review-section" aria-labelledby="syns-repositories-title">
+      <header class="section-head">
+        <p class="section-number">03 / existing Syns</p>
+        <h2 id="syns-repositories-title">Existing repositories considered</h2>
+        <p>Accessible repository metadata shortlists candidates; representative files must be privately inspected before join, extend, derive, link, consolidate, or ignore is proposed.</p>
+      </header>
+      <p class="scroll-label" id="syns-repositories-scroll-label"><span>Reuse and authority decisions</span><span>Scroll table →</span></p>
+      <div class="scroll-region" role="region" aria-labelledby="syns-repositories-scroll-label" tabindex="0">
+        <table>
+          <thead><tr><th>Repository</th><th>Decision</th><th>Evidence-based reason</th><th>Access / authority boundary</th></tr></thead>
+          <tbody>{{SYNS_REPOSITORIES}}</tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="review-section" aria-labelledby="candidates-title">
       <header class="section-head">
-        <p class="section-number">02 / shape</p>
+        <p class="section-number">04 / shape</p>
         <h2 id="candidates-title">Six-candidate decision</h2>
         <p>Each reference shape receives an explicit decision. At most one branded base may be selected; a zero-match is valid.</p>
       </header>
@@ -489,7 +520,7 @@
 
     <section class="review-section" aria-labelledby="tree-title">
       <header class="section-head">
-        <p class="section-number">03 / proposal</p>
+        <p class="section-number">05 / proposal</p>
         <h2 id="tree-title">Proposed repository</h2>
         <p>One continuous trunk traces each path left → its question and role → its origin and evidence on the right.</p>
       </header>
@@ -509,7 +540,7 @@
 
     <section class="review-section" aria-labelledby="mapping-title">
       <header class="section-head">
-        <p class="section-number">04 / disposition</p>
+        <p class="section-number">06 / disposition</p>
         <h2 id="mapping-title">Current → proposed mapping</h2>
         <p>Every old item needs a destination or an explicit reason for omission. Silence is not a disposition.</p>
       </header>
@@ -524,7 +555,7 @@
 
     <section class="review-section" aria-labelledby="unknowns-title">
       <header class="section-head">
-        <p class="section-number">05 / unknowns</p>
+        <p class="section-number">07 / unknowns</p>
         <h2 id="unknowns-title">Unknowns and unresolved authority</h2>
         <p>Blank answers remain unknown. They are not filled with a convenient inference and they do not grant permission.</p>
       </header>
@@ -533,7 +564,7 @@
 
     <section class="review-section" aria-labelledby="evaluation-title">
       <header class="section-head">
-        <p class="section-number">06 / test</p>
+        <p class="section-number">08 / test</p>
         <h2 id="evaluation-title">Evaluation plan and thresholds</h2>
         <p>Sealed, matched and read-only. Prepared fixtures are regression evidence, not independent causal proof.</p>
       </header>
@@ -546,7 +577,7 @@
 
     <section class="review-section" aria-labelledby="risks-title">
       <header class="section-head">
-        <p class="section-number">07 / risks</p>
+        <p class="section-number">09 / risks</p>
         <h2 id="risks-title">Risks held at the gate</h2>
         <p>These controls explain what approval does not settle.</p>
       </header>
