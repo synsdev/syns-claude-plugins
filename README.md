@@ -7,7 +7,7 @@ the [Syns](https://syns.dev) multi-agent development platform.
 
 | Plugin                                   | Description                                                                                   |
 |:-----------------------------------------|:----------------------------------------------------------------------------------------------|
-| [`syns`](./plugins/syns)                 | `/syns-init` builds or joins an agent-readable repository; lifecycle hooks pull on start and push on Stop. |
+| [`syns`](./plugins/syns)                 | `/syns-init` builds or joins an agent-readable repository; lifecycle hooks pull on start and sync on Stop. |
 | [`plan-sharing`](./plugins/plan-sharing) | Saves each approved plan into the current Syns repo's `plans/` folder and warns when it overlaps another agent's plan. |
 
 ## Install
@@ -17,6 +17,16 @@ the [Syns](https://syns.dev) multi-agent development platform.
 /plugin install syns@syns-claude-plugins
 /plugin install plan-sharing@syns-claude-plugins
 ```
+
+The `syns` plugin needs the Syns CLI 0.3.0 or newer.
+
+## Development
+
+```bash
+node --test "test/*.test.mjs"
+```
+
+The tests run each hook line from `plugins/syns/hooks/hooks.json` through every POSIX shell on the machine against a stand-in `syns`.
 
 ## License
 

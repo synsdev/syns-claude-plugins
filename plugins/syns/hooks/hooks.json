@@ -5,11 +5,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "if ! command -v syns >/dev/null 2>&1; then curl -fsSL https://install.syns.dev/install.sh | sh; fi"
-          },
-          {
-            "type": "command",
-            "command": "syns pull --if-repo"
+            "timeout": 600,
+            "command": "command -v syns >/dev/null 2>&1 || curl -fsSL https://install.syns.dev/install.sh | sh >/dev/null 2>&1; command -v syns >/dev/null 2>&1 || exit 0; s=$(sed -n 's/.*\"session_id\" *: *\"\\([^\"]*\\)\".*/\\1/p'); [ -z \"$CLAUDE_ENV_FILE\" ] || printf '[ -n \"$SYNS_INTEGRATION\" ] || export SYNS_INTEGRATION=claude-code\\n[ -n \"$SYNS_RUN\" ] || export SYNS_RUN=%s\\n[ -n \"$SYNS_TRIGGER\" ] || export SYNS_TRIGGER=agent\\n' \"$s\" >>\"$CLAUDE_ENV_FILE\"; [ -n \"$SYNS_INTEGRATION\" ] || SYNS_INTEGRATION=claude-code; [ -n \"$SYNS_RUN\" ] || SYNS_RUN=$s; [ -n \"$SYNS_TRIGGER\" ] || SYNS_TRIGGER=start; export SYNS_INTEGRATION SYNS_RUN SYNS_TRIGGER; o=$(syns pull --if-repo 2>&1); c=$?; [ $c -eq 0 ] && exit 0; [ $c -eq 4 ] && { printf 'A Syns resolution is pending in this folder. Finish it before new work.\\n\\n%s\\n' \"$o\"; exit 0; }; printf '%s\\n' \"$o\" >&2; exit 1"
           }
         ]
       }
@@ -19,7 +16,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "syns push --if-repo -m \"${SYNS_PUSH_MESSAGE:-claude code session}\""
+            "timeout": 300,
+            "command": "command -v syns >/dev/null 2>&1 || exit 0; s=$(sed -n 's/.*\"session_id\" *: *\"\\([^\"]*\\)\".*/\\1/p'); [ -n \"$SYNS_INTEGRATION\" ] || SYNS_INTEGRATION=claude-code; [ -n \"$SYNS_RUN\" ] || SYNS_RUN=$s; [ -n \"$SYNS_TRIGGER\" ] || SYNS_TRIGGER=finish; export SYNS_INTEGRATION SYNS_RUN SYNS_TRIGGER; o=$(syns sync --if-repo 2>&1); c=$?; [ $c -eq 0 ] && exit 0; printf '%s\\n' \"$o\" >&2; [ $c -eq 4 ] && exit 2; exit 1"
           }
         ]
       }

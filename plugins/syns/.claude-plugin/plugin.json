@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "syns",
   "displayName": "Syns",
-  "version": "0.2.1",
-  "description": "Auto-pull on Claude session start, auto-push on every Stop, and /syns-init to build or join an agent-readable repository.",
+  "version": "0.3.0",
+  "description": "Pull on session start and sync on every Stop, continuing the agent only when a resolution is required, plus /syns-init to build or join an agent-readable repository.",
   "author": {
     "name": "Bartosz Sojka",
     "email": "bartsoj@gmail.com"

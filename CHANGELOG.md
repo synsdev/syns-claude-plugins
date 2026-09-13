@@ -6,6 +6,30 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.3.0] — 2026-09-13
+
+### Changed
+
+- `syns` plugin: `Stop` runs `syns sync --if-repo` instead of `syns push`. It brings in the repository head and publishes the whole folder; where the head moved, it prepares a resolution instead of refusing.
+- Only a resolution continues Claude:
+  - `Stop` exits `2` with the CLI's instruction.
+  - `SessionStart` puts a pending resolution into Claude's context before new work.
+- Synced, no changes and the no-repository skip print nothing. Every other failure is shown to the user with the CLI's own line, and Claude is not continued.
+- Every publication carries published-by provenance: `SYNS_INTEGRATION=claude-code`, `SYNS_RUN` (the session id) and `SYNS_TRIGGER` (`start` or `finish`).
+  - `SessionStart` writes the same defaults, with `SYNS_TRIGGER=agent`, to `CLAUDE_ENV_FILE`, so Claude's own `syns` commands carry them too.
+  - Each value is a default only: one set in the environment wins.
+- Both hooks remain single command lines in `hooks/hooks.json`. `SessionStart` now installs the CLI and pulls in one command, because Claude Code runs a group's hooks in parallel.
+
+### Removed
+
+- `SYNS_PUSH_MESSAGE`: `syns sync` takes no commit message.
+
+### Requires
+
+- Syns CLI 0.3.0 or newer.
+
+## [0.2.1]
+
 ### Added
 
 - `/syns-init` in the `syns` plugin: mines an existing project, proposes a repository through a digest-bound local HTML review, stages and compares it with matched read-only tasks, and adopts or privately publishes only separately approved operations. An explicit `owner/name` joins an existing repository.
@@ -34,4 +58,5 @@ First public release. One plugin, two hooks.
 - macOS and Linux only. Windows users can install the CLI manually via Scoop; the hook commands themselves don't yet run
   under PowerShell.
 
+[0.3.0]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.3.0
 [0.1.0]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.1.0
