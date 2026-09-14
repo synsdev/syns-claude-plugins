@@ -17,7 +17,7 @@
           {
             "type": "command",
             "timeout": 300,
-            "command": "command -v syns >/dev/null 2>&1 || exit 0; s=$(sed -n 's/.*\"session_id\" *: *\"\\([^\"]*\\)\".*/\\1/p'); [ -n \"$SYNS_INTEGRATION\" ] || SYNS_INTEGRATION=claude-code; [ -n \"$SYNS_RUN\" ] || SYNS_RUN=$s; [ -n \"$SYNS_TRIGGER\" ] || SYNS_TRIGGER=finish; export SYNS_INTEGRATION SYNS_RUN SYNS_TRIGGER; o=$(syns sync --if-repo 2>&1); c=$?; [ $c -eq 0 ] && exit 0; printf '%s\\n' \"$o\" >&2; [ $c -eq 4 ] && exit 2; exit 1"
+            "command": "command -v syns >/dev/null 2>&1 || exit 0; i=$(cat); s=$(printf '%s' \"$i\" | sed -n 's/.*\"session_id\" *: *\"\\([^\"]*\\)\".*/\\1/p'); [ -n \"$SYNS_INTEGRATION\" ] || SYNS_INTEGRATION=claude-code; [ -n \"$SYNS_RUN\" ] || SYNS_RUN=$s; [ -n \"$SYNS_TRIGGER\" ] || SYNS_TRIGGER=finish; export SYNS_INTEGRATION SYNS_RUN SYNS_TRIGGER; o=$(syns sync --if-repo 2>&1); c=$?; [ $c -eq 0 ] && exit 0; if [ $c -eq 4 ]; then case $i in *'\"stop_hook_active\":true'*|*'\"stop_hook_active\": true'*) printf 'A Syns resolution is still pending after the agent was asked once this turn.\\n\\n%s\\n' \"$o\" >&2; exit 1 ;; esac; printf '%s\\n' \"$o\" >&2; exit 2; fi; printf '%s\\n' \"$o\" >&2; exit 1"
           }
         ]
       }

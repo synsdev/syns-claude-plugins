@@ -6,6 +6,12 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.3.1] — 2026-09-14
+
+### Changed
+
+- The finish hook sends the agent back once per turn, keyed on `stop_hook_active`, for a resolution. If the agent stops again in the same turn with the resolution unfinished, the hook reports it instead of blocking again, and the next prompt starts over. Before, an agent that declined a resolution was blocked on every stop, until the host gave up.
+
 ## [0.3.0] — 2026-09-13
 
 ### Changed
@@ -58,5 +64,6 @@ First public release. One plugin, two hooks.
 - macOS and Linux only. Windows users can install the CLI manually via Scoop; the hook commands themselves don't yet run
   under PowerShell.
 
+[0.3.1]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.3.1
 [0.3.0]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.3.0
 [0.1.0]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.1.0

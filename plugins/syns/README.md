@@ -22,7 +22,7 @@ Each hook is one command line in `hooks/hooks.json`, with no script behind it. I
 | `4`: resolution required | the CLI's instruction goes into Claude's context, asking it to finish the resolution before new work | exit `2`: Claude is sent back with the CLI's instruction |
 | anything else: a credential or permission failure, an unreachable server, a validation failure, attention required | the CLI's own line, shown to you | the CLI's own line, shown to you (`ctrl+o`); Claude is not continued |
 
-The instruction tells Claude what advanced, what is preserved and how to finish, and nothing publishes past a moved head until Claude runs `syns resolution continue`. Stop sends Claude back every time sync reports a resolution. The CLI bounds the rounds and ends with attention required, and Claude Code itself stops honouring a blocked stop after 8 in a row.
+The instruction tells Claude what advanced, what is preserved and how to finish, and nothing publishes past a moved head until Claude runs `syns resolution continue`. Stop sends Claude back once per turn. If Claude stops again in the same turn with the resolution unfinished, the hook shows you the instruction instead of blocking again, and your next prompt starts over.
 
 ## Provenance
 
