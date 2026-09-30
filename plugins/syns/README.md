@@ -1,16 +1,11 @@
 # `syns` plugin
 
-Two lifecycle hooks and one setup skill.
+Two lifecycle hooks. The plugin ships no skill: setting up Syns is [syns.app/skill.md](https://syns.app/skill.md), which any agent reads with nothing installed.
 
 | Surface | Action |
 |:--|:--|
 | `SessionStart` | Installs `syns` if it is missing, then `syns pull --if-repo` — brings the folder to the repository head without discarding local work. |
 | `Stop` | `syns sync --if-repo` — brings in the head and publishes everything written in the folder. |
-| `/syns-init` | Mines an existing project, proposes an agent-readable repository for local HTML review, runs a matched read-only comparison after approval, and adopts or privately publishes only the operations explicitly approved. An `owner/name` invocation joins that repository instead. |
-
-`/syns-init` is packaged from the same canonical source as the hosted setup skill. Its generated `checksums.json` verifies the references, renderers, review assets, evaluation fixtures, and skill bytes.
-
-The skill does not install lifecycle hooks or promise realtime synchronization. The two hooks remain the integration-owned transport behavior.
 
 ## What the hooks do with the result
 

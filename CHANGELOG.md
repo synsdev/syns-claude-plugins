@@ -6,6 +6,12 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.4.0] — 2026-09-30
+
+### Removed
+
+- The syns-init skill. Setting up Syns is now https://syns.app/skill.md, which any agent reads with nothing installed.
+
 ## [0.3.1] — 2026-09-14
 
 ### Changed
@@ -64,6 +70,7 @@ First public release. One plugin, two hooks.
 - macOS and Linux only. Windows users can install the CLI manually via Scoop; the hook commands themselves don't yet run
   under PowerShell.
 
+[0.4.0]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.4.0
 [0.3.1]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.3.1
 [0.3.0]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.3.0
 [0.1.0]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.1.0
