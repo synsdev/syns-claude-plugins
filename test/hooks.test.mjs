@@ -12,7 +12,7 @@ import { join } from "node:path";
 import test from "node:test";
 
 const HOST = {
-  hooksFile: "../plugins/syns/hooks/hooks.json",
+  hooksFile: "../plugins/syns-sync/hooks/hooks.json",
   start: "SessionStart",
   finish: "Stop",
   integration: "claude-code",

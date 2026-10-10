@@ -6,6 +6,18 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.5.0]
+
+### Changed
+
+- The marketplace is named `syns`. Plugin ids are `<plugin>@syns`.
+- The hooks plugin is now `syns-sync` (was `syns`).
+
+### Added
+
+- `syns`: one install for everything. A plugin with no code that depends on `syns-sync`, `syns-pages` and `plan-sharing`.
+- `syns-pages` (from `synsdev/syns-bb-plugin`, `hosts/claude`) and `unife-pages` (from `unifedev/unife-pages`), listed here so they come from the same place.
+
 ## [0.4.0] — 2026-09-30
 
 ### Removed

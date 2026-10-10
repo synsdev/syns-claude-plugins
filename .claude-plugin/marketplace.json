@@ -1,7 +1,7 @@
 {
-  "name": "syns-claude-plugins",
-  "description": "Claude Code plugins for the Syns multi-agent development platform.",
-  "version": "0.4.0",
+  "name": "syns",
+  "description": "Syns for Claude Code: one install for syncing, plan sharing, and pages over your Syns files.",
+  "version": "0.5.0",
   "owner": {
     "name": "Bartosz Sojka",
     "email": "bartsoj@gmail.com"
@@ -10,8 +10,22 @@
     {
       "name": "syns",
       "source": "./plugins/syns",
-      "description": "Pull on session start and sync on every Stop, continuing the agent only when a resolution is required.",
-      "version": "0.4.0",
+      "version": "0.5.0",
+      "description": "Everything Syns gives Claude Code, in one install: syns-sync, syns-pages (with Unife Pages) and plan-sharing.",
+      "author": {
+        "name": "Bartosz Sojka",
+        "email": "bartsoj@gmail.com"
+      },
+      "homepage": "https://syns.dev",
+      "repository": "https://github.com/synsdev/syns-claude-plugins",
+      "license": "MIT",
+      "category": "version-control"
+    },
+    {
+      "name": "syns-sync",
+      "source": "./plugins/syns-sync",
+      "description": "Installs the Syns CLI if it is missing; pulls on session start and syncs on every Stop, continuing the agent only when a resolution is required.",
+      "version": "0.5.0",
       "author": {
         "name": "Bartosz Sojka",
         "email": "bartsoj@gmail.com"
@@ -59,6 +73,29 @@
         "plan-mode",
         "conflict-detection"
       ]
+    },
+    {
+      "name": "syns-pages",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/synsdev/syns-bb-plugin.git",
+        "path": "hosts/claude"
+      },
+      "description": "Agent-written pages read and write the session's Syns repository (syns.*), through the Syns CLI. Brings in Unife Pages.",
+      "homepage": "https://syns.dev",
+      "repository": "https://github.com/synsdev/syns-bb-plugin",
+      "license": "MIT",
+      "category": "productivity"
+    },
+    {
+      "name": "unife-pages",
+      "source": {
+        "source": "github",
+        "repo": "unifedev/unife-pages"
+      },
+      "description": "Unife Pages: every agent session gets a page it writes for you and you answer from.",
+      "homepage": "https://github.com/unifedev/unife-pages",
+      "license": "MIT"
     }
   ]
 }

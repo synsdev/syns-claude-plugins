@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "syns-sync",
+  "displayName": "Syns Sync",
+  "version": "0.5.0",
+  "description": "Pull on session start and sync on every Stop, continuing the agent only when a resolution is required.",
+  "author": {
+    "name": "Bartosz Sojka",
+    "email": "bartsoj@gmail.com"
+  },
+  "homepage": "https://syns.dev",
+  "repository": "https://github.com/synsdev/syns-claude-plugins",
+  "license": "MIT",
+  "keywords": [
+    "syns",
+    "version-control",
+    "multi-agent",
+    "automation",
+    "hooks"
+  ]
+}

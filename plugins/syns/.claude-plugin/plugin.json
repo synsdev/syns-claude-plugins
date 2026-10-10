@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "syns",
   "displayName": "Syns",
-  "version": "0.4.0",
-  "description": "Pull on session start and sync on every Stop, continuing the agent only when a resolution is required.",
+  "version": "0.5.0",
+  "description": "Everything Syns gives Claude Code, in one install: syncing your work, sharing plans, and pages that read and write your Syns files.",
   "author": {
     "name": "Bartosz Sojka",
     "email": "bartsoj@gmail.com"
@@ -11,11 +11,9 @@
   "homepage": "https://syns.dev",
   "repository": "https://github.com/synsdev/syns-claude-plugins",
   "license": "MIT",
-  "keywords": [
-    "syns",
-    "version-control",
-    "multi-agent",
-    "automation",
-    "hooks"
+  "dependencies": [
+    "syns-sync",
+    "syns-pages",
+    "plan-sharing"
   ]
 }
