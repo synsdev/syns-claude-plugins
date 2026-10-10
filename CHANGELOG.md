@@ -6,17 +6,17 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-## [0.5.0]
+## [0.5.0] — 2026-10-10
 
 ### Changed
 
-- The marketplace is named `syns`. Plugin ids are `<plugin>@syns`.
+- The marketplace is named `syns`. Added fresh, plugin ids are `<plugin>@syns`. Upgrading: see the README's *Upgrading from 0.4*.
 - The hooks plugin is now `syns-sync` (was `syns`).
 
 ### Added
 
 - `syns`: one install for everything. A plugin with no code that depends on `syns-sync`, `syns-pages` and `plan-sharing`.
-- `syns-pages` (from `synsdev/syns-bb-plugin`, `hosts/claude`) and `unife-pages` (from `unifedev/unife-pages`), listed here so they come from the same place.
+- `syns-pages` (from `synsdev/syns-bb-plugin`, `hosts/claude`) and `unife-pages` (from `unifedev/unife-pages`), listed here so they come from the same place. Both follow their repository's `main`, which only receives reviewed releases.
 
 ## [0.4.0] — 2026-09-30
 
@@ -82,6 +82,7 @@ First public release. One plugin, two hooks.
 - macOS and Linux only. Windows users can install the CLI manually via Scoop; the hook commands themselves don't yet run
   under PowerShell.
 
+[0.5.0]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.5.0
 [0.4.0]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.4.0
 [0.3.1]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.3.1
 [0.3.0]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.3.0

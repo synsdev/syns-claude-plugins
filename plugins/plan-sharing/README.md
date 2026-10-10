@@ -34,4 +34,4 @@ it to that repo's
 - `syns` CLI, authenticated, with access to the repo.
 - `jq`.
 
-Pairs naturally with the [`syns`](../syns) plugin, which pulls on session start and pushes on stop.
+Pairs naturally with the [`syns-sync`](../syns-sync) plugin, which pulls on session start and syncs on stop.

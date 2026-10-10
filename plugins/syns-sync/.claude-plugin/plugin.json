@@ -3,7 +3,7 @@
   "name": "syns-sync",
   "displayName": "Syns Sync",
   "version": "0.5.0",
-  "description": "Pull on session start and sync on every Stop, continuing the agent only when a resolution is required.",
+  "description": "Installs the Syns CLI if it is missing; pulls on session start and syncs on every Stop, continuing the agent only when a resolution is required.",
   "author": {
     "name": "Bartosz Sojka",
     "email": "bartsoj@gmail.com"

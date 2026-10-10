@@ -24,6 +24,19 @@ claude plugin install syns --marketplace synsdev/syns-claude-plugins
 Then `/reload-plugins`, or start a new session. Each plugin also installs alone, for example
 `claude plugin install syns-sync --marketplace synsdev/syns-claude-plugins`.
 
+## Upgrading from 0.4
+
+Until 0.4 the marketplace was `syns-claude-plugins` and `syns` was the hooks plugin. A plain update turns `syns` into
+the bundle without its dependencies, and syncing stops. Instead, once:
+
+```sh
+claude plugin marketplace remove syns-claude-plugins   # also removes syns@ and plan-sharing@syns-claude-plugins
+rm -rf ~/.claude/plugins/marketplaces/syns             # only if a marketplace update already ran; harmless otherwise
+claude plugin install syns --marketplace synsdev/syns-claude-plugins
+```
+
+Then `/reload-plugins`, or start a new session.
+
 ## Development
 
 ```bash
