@@ -21,7 +21,8 @@ One command, from nothing:
 claude plugin install syns --marketplace synsdev/syns-claude-plugins
 ```
 
-Then `/reload-plugins`, or start a new session. Each plugin also installs alone, for example
+Then start a new session: `/reload-plugins` starts the page, but the page instruction reaches only a new session.
+Each plugin also installs alone, for example
 `claude plugin install syns-sync --marketplace synsdev/syns-claude-plugins`.
 
 ## Upgrading from 0.4
@@ -35,7 +36,7 @@ rm -rf ~/.claude/plugins/marketplaces/syns             # only if a marketplace u
 claude plugin install syns --marketplace synsdev/syns-claude-plugins
 ```
 
-Then `/reload-plugins`, or start a new session.
+Then start a new session.
 
 ## Development
 
