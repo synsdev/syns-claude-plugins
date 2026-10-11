@@ -6,6 +6,12 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.6.0] — 2026-10-11
+
+### Removed
+
+- `plan-sharing`: no longer offered. `syns` now installs `syns-sync` and `syns-pages`. To remove an installed copy: `claude plugin uninstall plan-sharing@syns`.
+
 ## [0.5.0] — 2026-10-10
 
 ### Changed

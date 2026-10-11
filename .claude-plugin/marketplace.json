@@ -1,7 +1,7 @@
 {
   "name": "syns",
-  "description": "Syns for Claude Code: one install for syncing, plan sharing, and pages over your Syns files.",
-  "version": "0.5.0",
+  "description": "Syns for Claude Code: one install for syncing and pages over your Syns files.",
+  "version": "0.6.0",
   "owner": {
     "name": "Bartosz Sojka",
     "email": "bartsoj@gmail.com"
@@ -10,8 +10,8 @@
     {
       "name": "syns",
       "source": "./plugins/syns",
-      "version": "0.5.0",
-      "description": "Everything Syns gives Claude Code, in one install: syns-sync, syns-pages (with Unife Pages) and plan-sharing.",
+      "version": "0.6.0",
+      "description": "Everything Syns gives Claude Code, in one install: syns-sync and syns-pages (with Unife Pages).",
       "author": {
         "name": "Bartosz Sojka",
         "email": "bartsoj@gmail.com"
@@ -45,33 +45,6 @@
         "syns",
         "auto-commit",
         "session-hooks"
-      ]
-    },
-    {
-      "name": "plan-sharing",
-      "source": "./plugins/plan-sharing",
-      "description": "Saves each approved plan into the current Syns repo's plans/ folder and warns when it overlaps another agent's plan in that repo.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Bartosz Sojka",
-        "email": "bartsoj@gmail.com"
-      },
-      "homepage": "https://syns.dev",
-      "repository": "https://github.com/synsdev/syns-claude-plugins",
-      "license": "MIT",
-      "keywords": [
-        "syns",
-        "multi-agent",
-        "coordination",
-        "plan",
-        "hooks"
-      ],
-      "category": "version-control",
-      "tags": [
-        "syns",
-        "multi-agent",
-        "plan-mode",
-        "conflict-detection"
       ]
     },
     {
