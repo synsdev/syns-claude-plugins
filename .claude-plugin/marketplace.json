@@ -1,7 +1,7 @@
 {
   "name": "syns",
   "description": "Syns for Claude Code: one install for syncing and pages over your Syns files.",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "owner": {
     "name": "Bartosz Sojka",
     "email": "bartsoj@gmail.com"
@@ -63,8 +63,8 @@
     {
       "name": "unife-pages",
       "source": {
-        "source": "github",
-        "repo": "unifedev/unife-pages"
+        "source": "url",
+        "url": "https://github.com/unifedev/unife-pages.git"
       },
       "description": "Unife Pages: every agent session gets a page it writes for you and you answer from.",
       "homepage": "https://github.com/unifedev/unife-pages",

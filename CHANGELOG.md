@@ -6,6 +6,12 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.6.1] — 2026-10-12
+
+### Fixed
+
+- `unife-pages` is fetched over HTTPS. Its `github` source cloned over SSH, so on a machine with no GitHub SSH key, or github.com not in `known_hosts`, `syns@syns` failed to load. Installs that worked need nothing. If `syns@syns` failed to load, run `claude plugin marketplace update syns`, then `claude plugin uninstall syns@syns` and `claude plugin install syns@syns`.
+
 ## [0.6.0] — 2026-10-11
 
 ### Removed
@@ -88,6 +94,7 @@ First public release. One plugin, two hooks.
 - macOS and Linux only. Windows users can install the CLI manually via Scoop; the hook commands themselves don't yet run
   under PowerShell.
 
+[0.6.1]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.6.1
 [0.5.0]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.5.0
 [0.4.0]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.4.0
 [0.3.1]: https://github.com/synsdev/syns-claude-plugins/releases/tag/v0.3.1
