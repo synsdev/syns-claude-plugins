@@ -53,7 +53,7 @@
         "source": "git-subdir",
         "url": "https://github.com/synsdev/syns-bb-plugin.git",
         "path": "hosts/claude",
-        "sha": "65a2d63d725ba652037e03f0a23ff5777889ec16"
+        "sha": "d8f1abf57179c7adb1c205ce394d2924738cea3a"
       },
       "description": "Agent-written pages read and write the session's Syns repository (syns.*), through the Syns CLI. Brings in Unife Pages.",
       "homepage": "https://syns.dev",
