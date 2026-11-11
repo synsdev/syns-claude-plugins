@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "syns",
   "displayName": "Syns",
-  "version": "0.6.0",
-  "description": "Everything Syns gives Claude Code, in one install: syncing your work, and pages that read and write your Syns files.",
+  "version": "0.7.0",
+  "description": "Everything Syns gives Claude Code, in one install: syncing your work, pages that read and write your Syns files, and a program that puts this computer at your Syns live door.",
   "author": {
     "name": "Bartosz Sojka",
     "email": "bartsoj@gmail.com"

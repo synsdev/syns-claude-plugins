@@ -6,6 +6,12 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.7.0] — 2026-11-12
+
+### Added
+
+- `syns`: `machine/machine.mjs`, a program you run on a computer of your own to make it one of your machines at your Syns live door, at `https://<you>--<name>.syns.dev`. Start it in a terminal with `node <plugin root>/machine/machine.mjs` (Node 22 or later); nothing starts it by itself. See the plugin's README.
+
 ## [0.6.1] — 2026-10-12
 
 ### Fixed
