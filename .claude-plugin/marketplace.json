@@ -1,7 +1,7 @@
 {
   "name": "syns",
   "description": "Syns for Claude Code: one install for syncing and pages over your Syns files.",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "owner": {
     "name": "Bartosz Sojka",
     "email": "bartsoj@gmail.com"
@@ -10,7 +10,7 @@
     {
       "name": "syns",
       "source": "./plugins/syns",
-      "version": "0.7.0",
+      "version": "0.7.1",
       "description": "Everything Syns gives Claude Code, in one install: syns-sync and syns-pages (with Unife Pages), and a program for a computer of yours at your Syns live door.",
       "author": {
         "name": "Bartosz Sojka",

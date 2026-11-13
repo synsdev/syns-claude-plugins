@@ -6,6 +6,13 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.7.1] — 2026-11-13
+
+### Fixed
+
+- `syns`: the README says what `machine/machine.mjs` needs: a Syns login made by `syns login` with Syns CLI 0.3.29 or later and approved in your browser, whose name the computer takes at your door. It also says what the program changes on the computer: Unife Pages' `remoteOrigins` and `publicOrigin`, and a restart or start of its daemon, after which your agents' page links are at the computer's address at your door. And it says that Ctrl-C leaves those settings, and how Disconnect, or you, put them back. The program is unchanged.
+- The repository's README no longer says that `syns` has no code of its own.
+
 ## [0.7.0] — 2026-11-12
 
 ### Added

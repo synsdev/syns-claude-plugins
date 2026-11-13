@@ -7,7 +7,7 @@ the [Syns](https://syns.dev) multi-agent development platform.
 
 | Plugin | Description |
 |:--|:--|
-| [`syns`](./plugins/syns) | **The one to install.** No code of its own; installs the ones below. |
+| [`syns`](./plugins/syns) | **The one to install.** Installs the ones below, and carries one program of its own, for a computer of yours at your Syns live door. |
 | [`syns-sync`](./plugins/syns-sync) | Installs the Syns CLI if it is missing; pulls on session start and syncs on every Stop. |
 | [`syns-pages`](https://github.com/synsdev/syns-bb-plugin/tree/main/hosts/claude) | Agent-written pages read and write your Syns files (`syns.*`). Code in `synsdev/syns-bb-plugin`; brings in `unife-pages`. |
 | [`unife-pages`](https://github.com/unifedev/unife-pages) | The page every session writes for you. Code in `unifedev/unife-pages`. |
